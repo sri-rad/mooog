@@ -1,38 +1,461 @@
-.App {
-  text-align: center;
+:root {
+  --panel_1: 12%;
+  --panel_2: 22%;
+  --panel_3: 25%;
+  --panel_4: 22%;
+  --panel_5: 13%;
+  --panel_6: 6%;
+}
+body {
+  background: #EFDD8D;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.keyboard {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0; 
+  width: 1000px; height: 600px;
+  background-color: #C19A6B;
+  border-radius: 2px;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.keys {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0; 
+  width: 100%; height: 83%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.white_key {
+    position: absolute;
+    margin: auto;
+    top: 0; 
+    left: 0; right: 0; 
+    width: 3%; height: 40%;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+}
+
+.white_key_pressed {
+  position: absolute;
+  margin: auto;
+  top: 0; 
+  left: 0; right: 0; 
+  width: 3%; height: 40%;
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  box-shadow: inset black 0 -1px 4px;
+}
+
+.black_key {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0; right: 0; 
+  width: 1.5%; height: 20%;
+  background-color: black;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset white 0 -1px 6px;
+}
+
+.black_key_pressed {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0; right: 0; 
+  width: 1.5%; height: 20%;
+  background-color: black;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset white 0 -1px 3px;
+}
+
+
+.panel_out {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  height: 50%; width: 100%;
+}
+
+.panel {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  height: 80%; width: 94%;
+  /* padding: 10%; */
+  margin: 3%;
+  /* background-clip: content-box; */
+  box-sizing: border-box;
+  background-color: rgb(66, 64, 66);
+  /* border-style: solid;
+  border-width: thin;
+  border-radius: 2px; */
+}
+
+.panel_1 {
+  position: absolute;
+  /* margin: auto; */
+  float: left;
+  top: 0; bottom: 0;
+  left: 0;
+  height: 100%; width: var(--panel_1);
+  background-clip: content-box;
+  box-sizing: border-box;
+  border-style: none solid none none;
+  border-width: thin;
+  border-color: white;
+}
+
+.panel_2 {
+  position: absolute;
+  /* display: flex; */
+  /* float: left; */
+  /* margin: auto; */
+  float: left;
+  top: 0; bottom: 0;
+  left: var(--panel_1);
+  height: 100%; width: var(--panel_2);
+  background-clip: content-box;
+  box-sizing: border-box;
+  border-style: none solid none none;
+  border-width: thin;
+  border-color: white;
+}
+
+.panel_3 {
+  position: absolute;
+  /* margin: auto; */
+  float: left;
+  top: 0; bottom: 0;
+  left: calc(var(--panel_1) + var(--panel_2));
+  height: 100%; width: var(--panel_3);
+  background-clip: content-box;
+  box-sizing: border-box;
+  border-style: none solid none none;
+  border-width: thin;
+  border-color: white;
+}
+
+.panel_4 {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: calc(var(--panel_1) + var(--panel_2) + var(--panel_3));
+  height: 100%; width: var(--panel_4);
+  background-clip: content-box;
+  box-sizing: border-box;
+  border-style: none solid none none;
+  border-width: thin;
+  border-color: white;
+}
+
+.panel_5 {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: calc(var(--panel_1) + var(--panel_2) + var(--panel_3) + var(--panel_4));
+  height: 100%; width: var(--panel_5);
+  background-clip: content-box;
+  box-sizing: border-box;
+  border-style: none solid none none;
+  border-width: thin;
+  border-color: white;
+}
+
+.panel_6 {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: calc(var(--panel_1) + var(--panel_2) + var(--panel_3) + var(--panel_4) + var(--panel_5));
+  height: 100%; width: var(--panel_6);
+  background-clip: content-box;
+  box-sizing: border-box;
+  border-style: none;
+  border-width: thin;
+  border-color: white;
+}
+
+.knob {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border-width: 10px;
+  border-color: gray;
+  background-color: gray;
+  -webkit-box-shadow:inset 0px 0px 0px 2px gray;
+  -moz-box-shadow:inset 0px 0px 0px 2px gray;
+  box-shadow:         inset 0 0 1px #000000;
+}
+
+.switch_container {
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  width: 15px; height: 30px;
+  /* position: relative; */
+}
+
+.switch {
+  position: absolute;
+  margin: 0 auto;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  width: 15px; height: 30px;
+  border-color: black;
+  /* background-color: white; */
+}
+
+.switch > .sector_1 {
+  position: relative;
+  top: 0%;
+  height:12%;
+  transform: perspective(0.5px) rotateX(0.35deg);
+}
+
+.switch > .sector_2 {
+  position: relative;
+  top: -2%;
+  height:40%;
+  transform: perspective(0.5px) rotateX(-0.1deg);
+}
+
+.switch > .sector_3 {
+  position: relative;
+  top: -4%;
+  height: 40%;
+  transform: perspective(0.5px) rotateX(0.5deg);
+}
+.switch > .sector_4 {
+  position: relative;
+  top: -6%;
+  height: 27%;
+  transform: perspective(0.5px) rotateX(-0.5deg);
+}
+
+.led-red {
+  margin: 0 auto;
+  width: 10px;
+  height: 10px;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #a52727 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+  -webkit-animation: blinkRed 0.5s infinite;
+  -moz-animation: blinkRed 0.5s infinite;
+  -ms-animation: blinkRed 0.5s infinite;
+  -o-animation: blinkRed 0.5s infinite;
+  animation: blinkRed 0.5s infinite;
+}
+
+@-webkit-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@-moz-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@-ms-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@-o-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+
+
+
+/* switch properties */
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin:0;
+  padding:0;
+}
+.mid {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top:1em;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Switch starts here */
+.rocker {
+  display: inline-block;
+  position: relative;
+  /*
+  SIZE OF SWITCH
+  ==============
+  All sizes are in em - therefore
+  changing the font-size here
+  will change the size of the switch.
+  See .rocker-small below as example.
+  */
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  /* background-color: blue; */
+  /* border-bottom: 0.5em solid #eee; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rocker-small {
+  font-size: 0.30em; /* Sizes the switch */
+  /* margin: 1em; */
 }
+
+.rocker::before {
+  content: "";
+  position: absolute;
+  /* top: 0.5em; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: blue; */
+  border-bottom: 0;
+}
+
+.rocker input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  /* background-color: #7FFFD4; */
+
+}
+
+.switch-left,
+.switch-right {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+  /* background-image: linear-gradient(to right, red , yellow); */
+  box-shadow: inset 0 0 3px rgb(66, 64, 66);
+}
+
+.switch-left {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  /* background-color: #7FFFD4; */
+  transform: rotate(15deg) skewX(15deg);
+}
+
+.switch-right {
+  right: 0.5em;
+  bottom: 0;
+  /* background-color: #7FFFD4; */
+  /* color: #00e6e6; */
+}
+
+.switch-left::before,
+.switch-right::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: inherit;
+  transform: skewY(-65deg);
+}
+
+.switch-left::before {
+  left: -0.4em;
+}
+
+.switch-right::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+
+input:checked + .switch-left {
+  /* background-color: #0084d0; */
+  /* color: #00e6e6; */
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+
+input:checked + .switch-left::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+
+input:checked + .switch-left + .switch-right {
+  /* background-color: #00e6e6; */
+  color: #888;
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+
+input:checked + .switch-left + .switch-right::before {
+  background-color: inherit;
+}
+
+/* Keyboard Users */
+input:focus + .switch-left {
+  color: #333;
+}
+
+input:checked:focus + .switch-left {
+  color: #fff;
+}
+
+input:focus + .switch-left + .switch-right {
+  color: #fff;
+}
+
+input:checked:focus + .switch-left + .switch-right {
+  color: #333;
+}
+
+/* end switch properties */
